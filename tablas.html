@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tablas</title>
+</head>
+<body>
+    <header>
+        <h1>Tablas</h1>
+    </header>
+
+    <main>
+        <section>
+            <!--como armar una tabla-->
+            <table border="1">
+                <tr>
+                    <th>
+                        columna 1                        
+                    </th>
+                    <th>
+                        columna 2                        
+                    </th>
+                </tr>
+            <!--filas o rows-->
+                <tr>
+                    <td>
+                        fila1 col1
+                    </td>
+                    <td>
+                        fila1 col2
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        fila1 col1
+                        <!--colespan expande la fila en n° columnas-->
+                    </td>                    
+                </tr>
+                
+            </table>
+
+            <hr>
+                <form>
+                <table>
+                    <tr>
+                        <td>
+                            nombre:
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            fecha de nacimiento:
+                        </td>
+                        <td>
+                            <input type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button>
+                            ENVIAR
+                            </button> 
+                        </td>                        
+                    </tr>
+                    <tr> 
+                        <td>
+                            Archivo:
+                            <!--añadir un archivo-->
+                        </td>
+                        <td>
+                            <input type="file">
+                        </td>
+                    </tr>
+                </table>
+                </form>
+                
+                
+        </section> 
+        <a href="index.html">Volver a Index</a>
+
+    </main>
+
+</body>
+</html>
