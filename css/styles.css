@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+
+/* comentario en css */
+
+/*todos los h1 del doc*/
+
+h1 {
+    color:blue;        
+}
+
+
+/* Estructura:
+selector {
+    atributo: valor;
+}
+*/
+
+/*selector por etiqueta*/
+
+h2 {
+    font-size: 45px;
+    color:purple;
+}
+
+p {
+    color:brown;
+}
+
+/*selector por id*/
+#parrafo_azul {
+    color:blue;
+}
+
+/*Selector por CLASE*/
+.textoverde {
+    color:green;
+}
+
+.caja {
+    background-color: aqua;
+    height:150px;
+    font-size:16px;
+}
+
+.caja p {
+    color:white; 
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*fuente externa*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.rgb {
+    color: rgb(0,255,0);
+}
+
+.hexa {
+    color:#500
+}
+
+.alpha {
+    color:rgb(0,0,0, 0.5);
+}
