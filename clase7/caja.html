@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Modelo de caja</title>
+
+    <style>
+        .caja1 {
+            width:200px;/*ancho caja*/
+            height:200px; /*Altura caja*/
+            border: 5px dashed blue; /*Borde de caja: puede tener 3 valores en conjunto
+            ancho de la linea, tipo de linea,  color*/
+            padding:20px; /*separa borde de la caja de su cont*/
+            margin: 20px;/*separa los bordes del exterior*/
+
+
+            
+            display: inline-block; /*para volver div de bloque en linea pero conservar su estructura original*/
+        }
+
+        .caja1 img {
+            width:200px;
+            height:200px; 
+        }
+
+
+        .textoinline {
+            display:inline;
+            /*convierte cualquier cosa que este en bloque, asi logran estar juntos y no uno abajo del otro*/
+        }
+        
+        .textoinline li {
+            display:inline;
+            margin:10px;
+            padding:5px;
+         }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="textoinline">
+                <li>Home</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
+
+            </ul>
+        </nav>
+    </header>
+
+</br>
+    <main>
+        <section>
+            <p class="textoinline">Texto</p>
+            <p class="textoinline">Texto</p>
+
+             <div class="caja1"> <!--los div son elementos de bloque-->
+                <p><img src="../gato en pc.jpg"></p>
+            </div>
+            <div class="caja1">
+                <p>
+                    <img src="../gato en pc.jpg">
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
