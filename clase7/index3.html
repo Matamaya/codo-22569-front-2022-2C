@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fieldset</title>
+    
+    <style>
+        a {
+            color:red;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: circle; 
+            /*estilos: none (ninguno); circle; disc; decimal (como un ol) */
+        }
+
+        /*herencia: */
+        ul li a {
+            color:green;
+        }
+     
+        .textcolor {
+            color:blue;
+        }
+
+        #textcolor {
+            color:blueviolet;
+        }
+
+        .textocolorimportant {
+            color:aqua !important;  
+            /*PARA PISAR EL INLINE*/
+        }
+
+
+        /*selector por atributos, en vez de etiquetas*/
+        [href] {
+            background-color: aqua;
+            text-decoration: line-through;
+        }
+        /*igual a*/
+        [id="galeria"] {
+            background-color: red;
+        }
+        /*que inicie con algo*/
+        [id^="r"] {
+            background-color:burlywood
+        }
+        /*que contenga algo*/
+        [id*="ale"] {
+            font-size:25px;
+            color:white;
+            
+        }
+        /*termine con algo*/
+        [id$="os"] {
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                <nav>
+                      
+                    <ul>
+                        <li>
+                            <a href="#nosotros">Link1</a>         
+                            <!--# para linkear con id del mismo nombre-->                   
+                        </li>
+                        <li>
+                            <a href="#contacto">Link2</a>                            
+                        </li>
+                        <li>
+                            <a href="#galeria">Link3</a>                            
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+
+        <section>
+            <!--orden jerarquia: el style, el id, el class-->
+            <p style="color:red;" class="textcolor textocolorimportant" id="textcolor">Parrafo 1</p>
+        </section>
+        <section>
+            <fieldset> <!--agrupar informacion dentro de un recuadro-->
+                <legend> <!--titulo dentro del recuadro-->
+                    Ofificiales
+                </legend>
+
+                <form method="post">
+                    <input type="file">
+                    <button>Enviar</button>
+                </form>
+            </fieldset>
+        </section>
+
+        <section id="nosotros">
+            <h3>Nosotros</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit harum nesciunt cupiditate libero porro ullam eligendi facilis, minima eos dicta maiores natus assumenda odio vitae? Consequuntur et modi ipsam optio.</p>
+
+        </section>
+
+        <section id="contacto">
+            <h3>Contacto</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit harum nesciunt cupiditate libero porro ullam eligendi facilis, minima eos dicta maiores natus assumenda odio vitae? Consequuntur et modi ipsam optio.</p>
+
+        </section>
+
+        <section id="galeria">
+            <h3>galeria</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit harum nesciunt cupiditate libero porro ullam eligendi facilis, minima eos dicta maiores natus assumenda odio vitae? Consequuntur et modi ipsam optio.</p>
+
+        </section>
+
+        
+        <section id="regaleria">
+            <h3>regaleria</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit harum nesciunt cupiditate libero porro ullam eligendi facilis, minima eos dicta maiores natus assumenda odio vitae? Consequuntur et modi ipsam optio.</p>
+
+        </section>
+    </main>
+</body>
+</html>
