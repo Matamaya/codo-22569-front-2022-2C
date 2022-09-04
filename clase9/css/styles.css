@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+}
+
+body {
+    background-color:rgb(236, 227, 218);
+    margin:0; 
+}
+
+.menucontainer {
+    list-style-type:none;
+    background-color:black;
+    padding:15px;
+    margin:0;
+    height:5sssssss0px;
+}
+
+.menucontainer li {
+    display: inline-block;
+    margin:10px;
+}
+
+.menucontainer li a {
+    text-decoration: none;
+    display: block; /*convertimos el a en bloque, y ahora todo el spacio
+    del bloq sera parte del link*/
+    height:30px;
+    padding-top:10px;
+    color:white;
+}
+
+.menucontainer li a:hover {
+    color:blueviolet;
+    border-radius:5px;
+    background-color: darkgray;
+    font-weight: bolder;
+    /*:hover para cuando el mouse por encima de algo*/
+}
+
+.menucontainer li a.active {
+    color:chocolate;
+    font-size:20px;
+}
+
+
+/*Section de main*/
+
+h1 {
+    color:orangered;
+    text-align: center;
+    margin:20px
+}
