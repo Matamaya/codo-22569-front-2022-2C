@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="">
+    <style>
+
+        
+        .cajacontainer {
+            background-color:aqua;
+            height:300px;
+            width:300px;
+            margin:10px;
+            padding:10px;
+            border: 5px solid red; 
+            
+        }
+
+        .uno {
+            background-color: red;
+         }
+
+         .dos {
+            background-color:orange;
+         } 
+         .tres {
+            background-color:yellow;
+         } 
+         .cuatro {
+            background-color:green;
+         } 
+
+         .cajacontainer div {
+            width:20%;
+            height:250px;
+
+            margin:5px;
+            display: inline-block; 
+            /*el inline block puede verse afectado por el width
+            si es muy grande y la caja div que contiene a las demas
+            no puede soportarlos uno al lado de otro, los va a tener
+            uno por debajo de otro. La solucion a esto es disminuir el width
+            de las cajas internas o aumentar el de la externa*/
+         }
+
+        .cajasola {
+            padding-top:10px;
+            width:200px;
+            height:200px;
+            background-color:lightblue;
+            box-sizing: border-box;
+            /*con el box sizing border box; la caja que hicimos 
+            se modificara para incluir
+            en alto y ancho al padding asi llega al valor determinado.
+            Sin esta propiedad, se le sumara el valor del padding
+            a los determinados en la caja
+            sin: 200x200 (+10)=210
+            con: 200x190 (+10)=200 */
+        } 
+
+        li {
+            list-style-type: square;
+
+        }
+
+        a {
+            text-decoration: none;
+            background-color: lightcyan;
+            border:5px solid fuchsia;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <li>
+                <a href="medidas.html"> Medidas </a>
+
+            </li>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="cajacontainer">
+                <div class="uno">uno</div>
+                <div class="dos">dos</div>
+                <div class="tres">tres</div>
+                <div class="cuatro">cuatro</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="cajasola">
+                Palabra
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
