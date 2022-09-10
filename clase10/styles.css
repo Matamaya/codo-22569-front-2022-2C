@@ -21,17 +21,14 @@
     border:2px solid yellow;
     background-color: aqua;
 }
-/*
 
 /*media query: me sirve para cambiar los estilos cuando cambia la resolucion*/
 @media screen and (max-width:600px) {
-    .container-flex {
+    section {
         flex-direction: column;
-        background-color: blueviolet;
     }
-    .container-item {
-        font-size: 2em;
-        color:blue
+    .content-text {
+        text-align: center;
     }
 }
 
@@ -40,6 +37,7 @@ section {
     display:flex;
     padding:10px;
     align-items: center;
+    justify-content: center;
 }
 
 section img {
@@ -74,4 +72,65 @@ section:nth-child(even) {
 /*html*/
 html {
     scroll-behavior: smooth;
+}
+
+/*menu*/
+.menucontainer {
+    background-color: #a18cd1;
+    display:flex;
+    padding:20px;
+    justify-content:space-between;
+    height:50px;
+
+    /*para que el menu se desplace hacia abajo hasta donde acaba el header
+    esta propiedad funciona con cualquier elemento padre como el header o una
+    caja que contenga elementos hermanos, uno mayor que el otro*/
+    position:sticky;
+    top:0;
+    /*para que sea fijo toda la pagina position:fixed* width:100%;*/ 
+}
+
+.menucontainer ul li {
+    display:inline-block;
+}
+
+.menucontainer a {
+    display:block;
+    text-decoration: none;
+}
+
+.menucontainer a:hover {
+    color:white;
+    font-size:1.2em;
+}
+
+header {
+    height: 650px;
+}
+header img {
+    height:600px;
+    width:100%;
+    
+}
+
+.content-text p {
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.content-text a {
+    display:inline-block;
+    width:100px;
+    height:40px;
+    border:2px solid rgb(207, 207, 207);
+    border-radius:20px;
+    background-color: white;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.1em;
+    padding:7px;
+    margin:5px;
+    color:rgb(156, 151, 151);
+    text-align: center;
+ 
 }
