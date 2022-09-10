@@ -87,7 +87,7 @@ html {
     caja que contenga elementos hermanos, uno mayor que el otro*/
     position:sticky;
     top:0;
-    /*para que sea fijo toda la pagina position:fixed*/
+    /*para que sea fijo toda la pagina position:fixed* width:100%;/ 
 }
 
 .menucontainer ul li {
