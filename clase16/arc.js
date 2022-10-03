@@ -32,27 +32,33 @@ for(let i=0;i < edades.length; i++) {
 function calcular() {
     const nota1Value = document.getElementById('nota1').value;
     const nota2Value = document.getElementById('nota2').value;
-    //invoco la funcion que procesa las notas
-    procesarNotas(nota1Value,nota2Value);
+    //solo proceso si el user cargo las DOS notas
+    if (nota1Value !=='' && nota2Value !=='') {
+        //invoco la funcion que procesa las notas
+        procesarNotas(+nota1Value,+nota2Value);
+    }else{
+        alert('ingrese los datos requeridos');
+    }
 }
 
 function procesarNotas(nota1,nota2) {
-    const notas = [nota1,nota2];//otra forma
-
-    /*const notas = [];
+    const notas = [nota1,nota2];//forma 3, crear vector y agregar cont
+    /* forma 1:
+    const notas = [];
     notas[0] = nota1;
     notas[1] = nota2;*/
-    /*
+    /* forma 2:
     const notas = [];
     notas.push(nota1);
     notas.push(nota2);
     */
-
-    let min;
-    let promedio;
-    
-    
-    let max = calcularMaximo(notas);
+    let min=calcularMinimo(notas);
+    let max = calcularMaximo(notas);//recibe el array completo
+    let promedio=calcularPromedio(notas);
+    //mostrar por consola
+    console.log('maximo: ', max);
+    console.log('minimo: ', min);
+    console.log('promedio: ', promedio);
 }
 
 function calcularMaximo(notas) {
@@ -73,10 +79,10 @@ function calcularMaximo(notas) {
 function calcularMinimo(notas) {
     let min;
     //definir una varible LOCAL
-    if(notas[0] > notas[1]) {
+    if(notas[0] < notas[1]) {
         min = notas[0]
     }
-    if(notas[1] > notas[0]) {
+    if(notas[1] < notas[0]) {
         min = notas[1];
     }
     if(notas[0] === notas[1]) {
@@ -85,71 +91,14 @@ function calcularMinimo(notas) {
     return min;
 }
 
-function calcularPromedio (notas) {
+function calcularPromedio(notas) {
+    //recorrro el vector acumulando notas
     let acumulador = 0;
     for(let i=0;i<notas.length;i++) {    
         acumulador= acumulador+notas[i];    
-    return 0;
     }
+    //calcular promedio:sumatoria de notas / cantidad de notas
+    const promedio = acumulador/notas.length
+    //retorno el promedio
+    return promedio
 }
-
-/* primero creo la funcion
-function calcularNotas() {
-    const nota1 = document.getElementById("nota1").value;
-    const nota2 = document.getElementById("nota2").value;
-
-    //validacion
-    const notasValidas = validarNotas(nota1,nota2);//tipo  boolean
-
-    if(!notasValidas) { // notasValidas === false
-        alert('Verifique los datos ingresados');
-        return;
-    }
-    
-    calcularValores(nota1, nota2);    
-}
-
-function validarNotas(nota1,nota2) {
-    //aca solo aplico validaciones
-    if(Number(nota1) && Number(nota2)) {
-        return true;
-    }
-    return false;
-}
-
-function calcularValores(nota1,nota2) {   
-    //crear el vector de notas
-    const notas = [];
-
-    //carga un vector
-    //1 - nombreVector[indice]=valor;
-    notas[0] = parseInt(nota1);
-    notas[1] = +nota2;
-    
-    //ahora trabajo con el vector
-    //recorrer el vector
-    let menor = notas[0];
-    let mayor = notas[0];
-    let promedio;
-    let suma = 0;
-    for(let i=0;i<notas.length;i++) {
-        //calculo el menor
-        if(notas[i] < menor)  {
-            menor = notas[i];
-        }
-        //calcular el mayor
-        if(notas[i] > mayor)  {
-            mayor = notas[i];
-        }
-        //sumo las notas
-        suma = suma + notas[i];
-    }
-
-    //ahora que tengo el la suma de las notas, calculo el promedio
-    promedio = suma / notas.length;
-
-    //mustro los datos
-    console.log(menor);
-    console.log(mayor);
-    console.log(promedio);
-} */
