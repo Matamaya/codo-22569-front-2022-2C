@@ -1,60 +1,72 @@
-/* primero creo la funcion
-function calcularNotas() {
-    const nota1 = document.getElementById("nota1").value;
-    const nota2 = document.getElementById("nota2").value;
-
-    //validacion
-    const notasValidas = validarNotas(nota1,nota2);//tipo  boolean
-
-    if(!notasValidas) { // notasValidas === false
-        alert('Verifique los datos ingresados');
-        return;
+//filtrar elementos
+const alumnos = [
+    {
+        edad: 35,
+        nombre: "carlos"//agrego objetos completos en el array
+    },
+    {
+        edad: 30,
+        nombre: "juan"
+    },
+    {
+        edad: 40,
+        nombre: "eduardo"
+    },
+    {
+        edad: 38,
+        nombre: "gaby"
     }
-    
-    calcularValores(nota1, nota2);    
+];
+
+//alumnos con edad < 40
+//declaro un array auxiliar donde guardar los que cumplan la condicion
+const aux = [];
+for (let unAlumno of alumnos) { //foreach (imperativo: que y como)
+    //console.log(unAlumno);
+    if (unAlumno.edad < 40) {
+        aux.push(unAlumno.nombre);
+    }
+}
+console.log('menores de 40: ', aux);
+
+//FILTER -->estructura --> nombreArray.filter(NombreVariable => Expresion que queremos evaluar);
+const aux2 = alumnos.filter(unAlumno => unAlumno.edad < 40); //declarativo: (que)
+console.log('menores de 40: ', aux2); 
+
+//MAP, junto con filter devuelve un array de lo que sea que especifiquemos
+const nombresDeAlumnos = aux2.map(unAlumno => unAlumno.nombre); //(que quiero???)
+console.log(nombresDeAlumnos);
+
+//SOME: old form:
+let existe = false;
+
+for (let i=0;i<alumnos.length && !existe;i++) { //foreach (imperativo que y como)
+    existe = alumnos[i].edad == 40; 
 }
 
-function validarNotas(nota1,nota2) {
-    //aca solo aplico validaciones
-    if(Number(nota1) && Number(nota2)) {
-        return true;
-    }
-    return false;
-}
+// muestren si existe un alumnos con edad = 40, y no recorrer todo el ciclo for
+console.log(existe)
 
-function calcularValores(nota1,nota2) {   
-    //crear el vector de notas
-    const notas = [];
+//SOME: new form
+const existe2 = alumnos.some(unAlumno => unAlumno.edad == 40);
+console.log(existe2)
 
-    //carga un vector
-    //1 - nombreVector[indice]=valor;
-    notas[0] = parseInt(nota1);
-    notas[1] = +nota2;
-    
-    //ahora trabajo con el vector
-    //recorrer el vector
-    let menor = notas[0];
-    let mayor = notas[0];
-    let promedio;
-    let suma = 0;
-    for(let i=0;i<notas.length;i++) {
-        //calculo el menor
-        if(notas[i] < menor)  {
-            menor = notas[i];
-        }
-        //calcular el mayor
-        if(notas[i] > mayor)  {
-            mayor = notas[i];
-        }
-        //sumo las notas
-        suma = suma + notas[i];
-    }
+//SI TODOS LOS ALUMNOS TIENE EDAD = 35
+let todos35 = true;
+for (let i = 0; i < alumnos.length && (todos35 = alumnos[i].edad !== 35); i++) {}
+console.log(todos35);
 
-    //ahora que tengo el la suma de las notas, calculo el promedio
-    promedio = suma / notas.length;
+//EVERY
+const todos35_2 = alumnos.every(unAlumno => unAlumno.edad == 35);
+console.log(todos35_2);
 
-    //muestro los datos
-    console.log(menor);
-    console.log(mayor);
-    console.log(promedio);
-} */
+//SUMAR TODAS LAS EDADES DE LOS ALUMNOS OLD
+let edadTotal = 0;
+alumnos.forEach(unAlumno => edadTotal += unAlumno.edad);//que
+
+console.log(edadTotal);
+
+//REDUCE
+const edadTotal2 = alumnos.reduce((total,alumnoActual) => total + alumnoActual.edad,0);
+console.log(edadTotal2);
+//al reduce se le agregan dos parametros uno que va a acumulando los valores (total) y otro donde esta el valor actual, 0=valor inicial

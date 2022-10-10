@@ -6,7 +6,6 @@ const edadCesar = 25;
 //los vectores son dinamicos
 const edades = [];
 //agregar un elemento
-//agregar un elemento
 edades.push(36);//agregando 36 al vector edades
 //invocando el metodo "push"
 edades.push(edadEduardo);
@@ -24,7 +23,7 @@ edades.push(39);
 edades.push(51);
 
 //uso de ciclos
-for(let i=0;i < edades.length; i++) {
+for(let i=0; i < edades.length; i++) {
     //alt+96
     console.log(`dentro del for ${i}:`,edades[i]);
 }
