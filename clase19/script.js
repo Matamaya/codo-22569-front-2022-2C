@@ -1,18 +1,3 @@
-/* CLASE 19: Intro API
-Trabajamos en el Front, donde no se conecta a una base de datos, no los guarda ni los persiste
-
-Para esta tarea vamos a ir consumiendo un poco de info del BACKEND
-Como, A.P.I. rest - recursos expuestos en un lugar determinado. -- BACKEND
-Los recursos son el contenido que expone un sitio web y lo deja disponible para que alguien lo pueda consumir
-estos recursos pueden ser: consulta (GET), creacion (POST), modificacion (PUT), eliminacion(DELE)
-
-en mi js escribo un codigo que usando tecnologias como FETCH armamos una cosulta para que llegue a la url donde estan los recursos y me devuelva la info
-
-JSON (javascript objectnotation): posee dos metodos de conversion (util del front al back) 
-JSON.stringify(objeto); -> transforma objeto a string
-JSON.parse(string); -> transforma string a objeto*/
-
-
 const personas = [//array1
     {//objeto1
         dni: 1234578,
@@ -83,10 +68,10 @@ let existe = false;
 
     const existeV3 = dirFlat.some(d => d.localidad.cp === 1237);
     console.log(existeV3);
-    //-----------------
+    
 
     let array1 = [1,2,3, [4,5,6],7,8 ];
-    //el .flat lo convertira a [1,2,3,4,5,6,7,8], como que desfragmenta los arrays que hay dentro de otro mayor
+    //el .flat lo convertira a [1,2,3,4,5,6,7,8], como que desfragmenta los arrays que estan dentro de uno mayor
     console.log(array1);
     array1 = array1.flat();
     console.log(array1);
@@ -99,7 +84,7 @@ function CrearDivPersona(personas) {
         divPersona.innerHTML += CrearCardPersona(persona);
     });
 }
-//inicio - convoco la funcion 
+//inicio - convoco la funcion creada
 CrearDivPersona(personas);
 
 //card importado de Bootstrap, añadido por JS!!!
@@ -112,7 +97,7 @@ function CrearCardPersona(unaPersona) {
     </div>
   </div>`;   
   return html; 
-  //templates: cuando tenemos un texto entre comillas invertidas `hola` se le pueden introducir variables usando ${variable}
+  //templates: cuando tenemos un texto entre comillas invertidas `hola` se le pueden introducir variables usando ${variable} o una funcion ${funcion(variable.atributo )}
 }
 
 function CrearDirecciones(direccion) {
