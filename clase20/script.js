@@ -52,3 +52,20 @@ const json = {
         "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
     }
 };
+
+function buscarEnServicioRest(page) {
+    //para consultar un api externo 
+    //usamos el fetch API
+    //https://reqres.in/api/users?page=2
+    /*
+    fetch('https://reqres.in/api/users?page=2')
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    */
+   debugger;
+    let url = 'https://reqres.in/api/users';
+    if(page >= 0 ) {
+        url += `?page=${page}`;
+    }
+    return fetch(url);
+}
