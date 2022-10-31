@@ -20,7 +20,7 @@ function Paginador(json) {
 
 function Page(page,total,total_pages) {
 
-    const prev = `<li class="page-item ${page === total ? 'disabled' : ''}">
+    const prev = `<li class="page-item disabled ${page === total}">
         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
     </li>`;
 
@@ -35,7 +35,8 @@ function Page(page,total,total_pages) {
 
     const next = `<li class="page-item">
         <a class="page-link" href="#">Next</a>
-    </li>`;
-
+        </li>`;
+         
     return prev + lis + next;
 }
+

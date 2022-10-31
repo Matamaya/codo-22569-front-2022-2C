@@ -1,5 +1,5 @@
 function Users(userJson) {
-    //console.log(userJson);
+    console.log(userJson);
 
     const html = `
         <table class="table">
@@ -16,7 +16,6 @@ function Users(userJson) {
             </tbody>
         </table>
     `;
-
     document.getElementById('users').innerHTML = html;
 
     //return html;
@@ -38,3 +37,4 @@ function User(user) {
 function UserImage(urlImagePath) {
     return `<img src="${urlImagePath}">`;
 }
+ 

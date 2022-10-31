@@ -62,10 +62,12 @@ function buscarEnServicioRest(page) {
         .then((response) => response.json())
         .then((data) => console.log(data));
     */
-   debugger;
+   
     let url = 'https://reqres.in/api/users';
     if(page >= 0 ) {
         url += `?page=${page}`;
     }
     return fetch(url);
 }
+
+ 
